@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Pet Shop Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Relatórios</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Visão Geral</a></li>
+            <li><a href="clients.html">Clientes</a></li>
+            <li><a href="pets.html">Pets</a></li>
+            <li><a href="services.html">Serviços</a></li>
+            <li><a href="stock.html">Estoque</a></li>
+            <li><a href="sales.html">Vendas</a></li>
+            <li><a href="reports.html">Relatórios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Filtros para Relatórios</h2>
+            <form action="/gerar_relatorio" method="post">
+                <label for="periodo">Período:</label>
+                <select id="periodo" name="periodo">
+                    <option value="diario">Diário</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="mensal">Mensal</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select><br>
+
+                <label for="tipo_relatorio">Tipo de Relatório:</label>
+                <select id="tipo_relatorio" name="tipo_relatorio">
+                    <option value="vendas">Vendas</option>
+                    <option value="estoque">Estoque</option>
+                    <option value="agendamentos">Agendamentos</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select><br>
+
+                <input type="submit" value="Gerar Relatório">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Pet Shop</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pet Shop - Dashboard</h1>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Visão Geral</a></li>
+            <li><a href="clients.html">Clientes</a></li>
+            <li><a href="pets.html">Pets</a></li>
+            <li><a href="services.html">Serviços</a></li>
+            <li><a href="stock.html">Estoque</a></li>
+            <li><a href="sales.html">Vendas</a></li>
+            <li><a href="reports.html">Relatórios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="overview">
+            <h2>Visão Geral</h2>
+            <canvas id="client-chart" width="400" height="200"></canvas>
+            <canvas id="pet-chart" width="400" height="200"></canvas>
+        </section>
+        <!-- Outras seções podem ser adicionadas aqui -->
+    </main>    
+    
+    <footer>
+        <p>&copy; 2024 Pet Shop</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
