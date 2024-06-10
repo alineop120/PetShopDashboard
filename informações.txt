@@ -1,0 +1,8 @@
+Víedo: Seu servidor PHP no Windows - @CursoemVideo de PHP - Gustavo Guanabara
+https://www.youtube.com/watch?v=0Y9OZ0vc1SU&list=PLHz_AreHm4dlFPrCXCmd5g92860x_Pbr_&index=12
+
+Extenções:
+* PHP Awesome Snippets
+
+Instalações: 
+* XAMPP -> https://www.apachefriends.org/pt_br/index.html

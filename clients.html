@@ -13,12 +13,12 @@
     <nav>
         <ul>
             <li><a href="index.html">Visão Geral</a></li>
-            <li><a href="clientes.php">Clientes</a></li>
-            <li><a href="pets.php">Pets</a></li>
-            <li><a href="#services">Serviços</a></li>
-            <li><a href="#stock">Estoque</a></li>
-            <li><a href="#sales">Vendas</a></li>
-            <li><a href="#reports">Relatórios</a></li>
+            <li><a href="clients.html">Clientes</a></li>
+            <li><a href="pets.html">Pets</a></li>
+            <li><a href="services.html">Serviços</a></li>
+            <li><a href="stock.html">Estoque</a></li>
+            <li><a href="sales.html">Vendas</a></li>
+            <li><a href="reports.html">Relatórios</a></li>
         </ul>
     </nav>
     <main>
@@ -43,46 +43,7 @@
                     <input type="reset" value="Cancelar">
                 </form>
             </section>
-
-            <h2>Clientes Cadastrados</h2>
-            <?php
-            // Conectar ao banco de dados
-            $servername = "localhost";
-            $username = "root"; // Altere conforme necessário
-            $password = ""; // Altere conforme necessário
-            $dbname = "petshop";
-
-            // Cria a conexão
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            // Verifica a conexão
-            if ($conn->connect_error) {
-                die("Conexão falhou: " . $conn->connect_error);
-            }
-
-            // Consulta os clientes cadastrados
-            $sql = "SELECT nome_cliente, endereco_cliente, telefone_cliente, email_cliente FROM clientes";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                // Exibe os dados de cada cliente
-                echo "<ul>";
-                while($row = $result->fetch_assoc()) {
-                    echo "<li>";
-                    echo "Nome: " . $row["nome_cliente"] . "<br>";
-                    echo "Endereço: " . $row["endereco_cliente"] . "<br>";
-                    echo "Telefone: " . $row["telefone_cliente"] . "<br>";
-                    echo "Email: " . $row["email_cliente"];
-                    echo "</li>";
-                }
-                echo "</ul>";
-            } else {
-                echo "Nenhum cliente cadastrado.";
-            }
-
-            // Fecha a conexão
-            $conn->close();
-            ?>
+            <h2><a href="cadastro_cliente.php">Clientes Cadastrados</a></h2>
         </section>
     </main>
     <footer>
@@ -90,3 +51,4 @@
     </footer>
 </body>
 </html>
+

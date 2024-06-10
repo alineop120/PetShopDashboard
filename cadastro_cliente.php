@@ -1,37 +1,52 @@
-<?php
-// Conectar ao banco de dados
-$servername = "localhost";
-$username = "root"; // Altere conforme necessário
-$password = ""; // Altere conforme necessário
-$dbname = "petshop";
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clientes Cadastrados</title>
+</head>
+<body>
+    <header>
+        <h2>Listas dos Clientes</h2>
+    </header>
+    <main>
+        <?php
+        // Conectar ao banco de dados
+        $servername = "localhost";
+        $username = "root"; // Altere conforme necessário
+        $password = ""; // Altere conforme necessário
+        $dbname = "petshop";
 
-// Cria a conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+        // Cria a conexão
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
+        // Verifica a conexão
+        if ($conn->connect_error) {
+            die("Conexão falhou: " . $conn->connect_error);
+        }
 
-// Verifica se o formulário foi submetido
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtém os dados do formulário
-    $nome_cliente = $_POST["nome_cliente"];
-    $endereco_cliente = $_POST["endereco_cliente"];
-    $telefone_cliente = $_POST["telefone_cliente"];
-    $email_cliente = $_POST["email_cliente"];
+        // Verifica se o formulário foi submetido
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Obtém os dados do formulário
+            $nome_cliente = $_POST["nome_cliente"];
+            $endereco_cliente = $_POST["endereco_cliente"];
+            $telefone_cliente = $_POST["telefone_cliente"];
+            $email_cliente = $_POST["email_cliente"];
 
-    // Prepara e executa a inserção dos dados
-    $sql = "INSERT INTO clientes (nome_cliente, endereco_cliente, telefone_cliente, email_cliente)
-            VALUES ('$nome_cliente', '$endereco_cliente', '$telefone_cliente', '$email_cliente')";
+            // Prepara e executa a inserção dos dados
+            $sql = "INSERT INTO clientes (nome_cliente, endereco_cliente, telefone_cliente, email_cliente)
+                    VALUES ('$nome_cliente', '$endereco_cliente', '$telefone_cliente', '$email_cliente')";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Novo cliente cadastrado com sucesso!";
-    } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
-    }
-}
+            if ($conn->query($sql) === TRUE) {
+                echo "Novo cliente cadastrado com sucesso!";
+            } else {
+                echo "Erro: " . $sql . "<br>" . $conn->error;
+            }
+        }
 
-// Fecha a conexão
-$conn->close();
-?>
+        // Fecha a conexão
+        $conn->close();
+        ?>
+    </main>
+</body>
+</html>
